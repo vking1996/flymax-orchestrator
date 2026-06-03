@@ -1,0 +1,173 @@
+{
+  "name": "search-and-rescue-grid",
+  "description": "Single drone performs a lawnmower grid search over 10m x 10m at 5m altitude. Simulates post-disaster search zone.",
+  "fleet": [
+    {
+      "id": "cf01",
+      "callsign": "Seeker-1",
+      "backend_uri": "radio://0/80/2M/E7E7E7E7E7"
+    }
+  ],
+  "legs": [
+    {
+      "drone_ids": [
+        "cf01"
+      ],
+      "formation": "single",
+      "timeout_s": 180.0,
+      "on_failure": "rtl",
+      "waypoints": [
+        {
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 5.0
+          },
+          "frame": "local",
+          "hold_s": 1.0,
+          "speed_mps": 2.0
+        },
+        {
+          "position": {
+            "x": 10.0,
+            "y": 0.0,
+            "z": 5.0
+          },
+          "frame": "local",
+          "hold_s": 0.5,
+          "speed_mps": 2.0
+        },
+        {
+          "position": {
+            "x": 10.0,
+            "y": 2.0,
+            "z": 5.0
+          },
+          "frame": "local",
+          "hold_s": 0.5,
+          "speed_mps": 1.0
+        },
+        {
+          "position": {
+            "x": 0.0,
+            "y": 2.0,
+            "z": 5.0
+          },
+          "frame": "local",
+          "hold_s": 0.5,
+          "speed_mps": 2.0
+        },
+        {
+          "position": {
+            "x": 0.0,
+            "y": 4.0,
+            "z": 5.0
+          },
+          "frame": "local",
+          "hold_s": 0.5,
+          "speed_mps": 1.0
+        },
+        {
+          "position": {
+            "x": 10.0,
+            "y": 4.0,
+            "z": 5.0
+          },
+          "frame": "local",
+          "hold_s": 0.5,
+          "speed_mps": 2.0
+        },
+        {
+          "position": {
+            "x": 10.0,
+            "y": 6.0,
+            "z": 5.0
+          },
+          "frame": "local",
+          "hold_s": 0.5,
+          "speed_mps": 1.0
+        },
+        {
+          "position": {
+            "x": 0.0,
+            "y": 6.0,
+            "z": 5.0
+          },
+          "frame": "local",
+          "hold_s": 0.5,
+          "speed_mps": 2.0
+        },
+        {
+          "position": {
+            "x": 0.0,
+            "y": 8.0,
+            "z": 5.0
+          },
+          "frame": "local",
+          "hold_s": 0.5,
+          "speed_mps": 1.0
+        },
+        {
+          "position": {
+            "x": 10.0,
+            "y": 8.0,
+            "z": 5.0
+          },
+          "frame": "local",
+          "hold_s": 0.5,
+          "speed_mps": 2.0
+        },
+        {
+          "position": {
+            "x": 10.0,
+            "y": 10.0,
+            "z": 5.0
+          },
+          "frame": "local",
+          "hold_s": 0.5,
+          "speed_mps": 1.0
+        },
+        {
+          "position": {
+            "x": 0.0,
+            "y": 10.0,
+            "z": 5.0
+          },
+          "frame": "local",
+          "hold_s": 1.0,
+          "speed_mps": 2.0
+        },
+        {
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 5.0
+          },
+          "frame": "local",
+          "hold_s": 0.5,
+          "speed_mps": 3.0
+        }
+      ]
+    }
+  ],
+  "safety": {
+    "max_altitude_m": 10.0,
+    "geofence_min": {
+      "x": -1.0,
+      "y": -1.0,
+      "z": 0.0
+    },
+    "geofence_max": {
+      "x": 11.0,
+      "y": 11.0,
+      "z": 10.0
+    },
+    "max_speed_mps": 3.0,
+    "low_battery_pct": 20.0,
+    "emergency_land_keyword": "ABORT"
+  },
+  "metadata": {
+    "author": "hand-authored",
+    "purpose": "lawnmower grid search pattern"
+  }
+}
