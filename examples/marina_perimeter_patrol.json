@@ -1,0 +1,123 @@
+{
+  "name": "marina-perimeter-patrol",
+  "description": "Single drone patrols marina perimeter (approx 80m x 60m) at 15m AGL. GPS outdoor mission, PX4 backend.",
+  "fleet": [
+    {
+      "id": "px01",
+      "callsign": "Coast-1",
+      "backend_uri": "serial:///dev/ttyACM0:115200"
+    }
+  ],
+  "legs": [
+    {
+      "drone_ids": [
+        "px01"
+      ],
+      "formation": "single",
+      "timeout_s": 600.0,
+      "on_failure": "rtl",
+      "waypoints": [
+        {
+          "position": {
+            "lat": 12.958,
+            "lon": 80.256,
+            "z": 15.0
+          },
+          "frame": "gps",
+          "hold_s": 5.0,
+          "speed_mps": 5.0
+        },
+        {
+          "position": {
+            "lat": 12.9585,
+            "lon": 80.257,
+            "z": 15.0
+          },
+          "frame": "gps",
+          "hold_s": 2.0,
+          "speed_mps": 5.0
+        },
+        {
+          "position": {
+            "lat": 12.9588,
+            "lon": 80.2575,
+            "z": 15.0
+          },
+          "frame": "gps",
+          "hold_s": 2.0,
+          "speed_mps": 5.0
+        },
+        {
+          "position": {
+            "lat": 12.9585,
+            "lon": 80.258,
+            "z": 15.0
+          },
+          "frame": "gps",
+          "hold_s": 2.0,
+          "speed_mps": 5.0
+        },
+        {
+          "position": {
+            "lat": 12.9575,
+            "lon": 80.2578,
+            "z": 15.0
+          },
+          "frame": "gps",
+          "hold_s": 2.0,
+          "speed_mps": 5.0
+        },
+        {
+          "position": {
+            "lat": 12.957,
+            "lon": 80.257,
+            "z": 15.0
+          },
+          "frame": "gps",
+          "hold_s": 2.0,
+          "speed_mps": 5.0
+        },
+        {
+          "position": {
+            "lat": 12.9572,
+            "lon": 80.256,
+            "z": 15.0
+          },
+          "frame": "gps",
+          "hold_s": 2.0,
+          "speed_mps": 5.0
+        },
+        {
+          "position": {
+            "lat": 12.958,
+            "lon": 80.256,
+            "z": 15.0
+          },
+          "frame": "gps",
+          "hold_s": 2.0,
+          "speed_mps": 5.0
+        }
+      ]
+    }
+  ],
+  "safety": {
+    "max_altitude_m": 50.0,
+    "geofence_min": {
+      "lat": 12.9565,
+      "lon": 80.2555,
+      "z": 0.0
+    },
+    "geofence_max": {
+      "lat": 12.9595,
+      "lon": 80.2585,
+      "z": 50.0
+    },
+    "max_speed_mps": 10.0,
+    "low_battery_pct": 30.0,
+    "emergency_land_keyword": "ABORT"
+  },
+  "metadata": {
+    "author": "hand-authored",
+    "purpose": "GPS perimeter patrol of marina"
+  }
+}
