@@ -1,0 +1,105 @@
+{
+  "name": "three-drone-v-formation",
+  "description": "Three Crazyflies fly a 2m x 2m square in V formation at 1.2m altitude.",
+  "fleet": [
+    {
+      "id": "cf01",
+      "callsign": "Lead-1",
+      "backend_uri": "radio://0/80/2M/E7E7E7E7E7"
+    },
+    {
+      "id": "cf02",
+      "callsign": "Left-2",
+      "backend_uri": "radio://0/80/2M/E7E7E7E7E6"
+    },
+    {
+      "id": "cf03",
+      "callsign": "Right-3",
+      "backend_uri": "radio://0/80/2M/E7E7E7E7E5"
+    }
+  ],
+  "legs": [
+    {
+      "drone_ids": [
+        "cf01",
+        "cf02",
+        "cf03"
+      ],
+      "formation": "v",
+      "timeout_s": 90.0,
+      "on_failure": "rtl",
+      "waypoints": [
+        {
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.2
+          },
+          "frame": "local",
+          "hold_s": 2.0,
+          "speed_mps": 0.5
+        },
+        {
+          "position": {
+            "x": 2.0,
+            "y": 0.0,
+            "z": 1.2
+          },
+          "frame": "local",
+          "hold_s": 1.0,
+          "speed_mps": 0.5
+        },
+        {
+          "position": {
+            "x": 2.0,
+            "y": 2.0,
+            "z": 1.2
+          },
+          "frame": "local",
+          "hold_s": 1.0,
+          "speed_mps": 0.5
+        },
+        {
+          "position": {
+            "x": 0.0,
+            "y": 2.0,
+            "z": 1.2
+          },
+          "frame": "local",
+          "hold_s": 1.0,
+          "speed_mps": 0.5
+        },
+        {
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.2
+          },
+          "frame": "local",
+          "hold_s": 0.5,
+          "speed_mps": 0.5
+        }
+      ]
+    }
+  ],
+  "safety": {
+    "max_altitude_m": 2.5,
+    "geofence_min": {
+      "x": -0.5,
+      "y": -0.5,
+      "z": 0.0
+    },
+    "geofence_max": {
+      "x": 2.5,
+      "y": 2.5,
+      "z": 2.5
+    },
+    "max_speed_mps": 1.0,
+    "low_battery_pct": 25.0,
+    "emergency_land_keyword": "ABORT"
+  },
+  "metadata": {
+    "author": "hand-authored",
+    "purpose": "three-drone V-formation patrol"
+  }
+}
