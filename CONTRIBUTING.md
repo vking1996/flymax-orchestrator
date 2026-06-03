@@ -34,6 +34,12 @@ flymax plan "patrol Marina beach in a triangle at 30m altitude"
 
 We tag five tracks:
 
+Check for the `good first issue` label on issues — current picks include:
+- **#3** Extend example missions library
+- **#8** Mock Anthropic for tests + CI workflow
+- **#9** Skybrush Studio export from MissionPlan
+
+
 | Label | What it means |
 |---|---|
 | `phase-1` | Sim work — Gazebo backend wiring, example missions, schema tweaks |
